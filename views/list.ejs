@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To do list</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="box" id="heading">
+      <h1><%=pk%></h1>
+    </div>
+    <div class="box">
+
+        <%for(var i=0;i<lily.length;i++){%>
+          <div class="item">
+            <input type="checkbox">
+          <p><%= lily[i] %></p>
+          </div>
+      <%}%>
+      <form class="item" action="/" method="post">
+
+      <input type="text" name="lily" placeholder="New item" autocomplete="off">
+      <button type="submit" name="button">+</button>
+
+      </form>
+    </div>
+
+
+
+
+  </body>
+</html>

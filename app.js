@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app=express();
-var ans=["Eat😋","Sleep😴","Code💻","Repeat♻"];
+var ans=["Eat😋","Sleep😴","Code💻","Repeat♻","Type your Work in the blank space Hit the "+" to add."
+,"You can cross items off by clicking on the boxes"];
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));

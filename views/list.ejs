@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -11,14 +11,16 @@
     </div>
     <div class="box">
 
-        <%for(var i=0;i<lily.length;i++){%>
-          <div class="item">
-            <input type="checkbox">
-          <p><%= lily[i] %></p>
-          </div>
-      <%}%>
-      <form class="item" action="/" method="post">
 
+        <%lily.forEach(function(item){%>
+          <form action="/delete" method="post">
+          <div class="item">
+            <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()">
+          <p><%= item.name %></p>
+          </div>
+      <%})%>
+  </form>
+      <form class="item" action="/" method="post">
       <input type="text" name="lily" placeholder="New item" autocomplete="off">
       <button type="submit" name="button">+</button>
 
@@ -27,6 +29,15 @@
 
 
 
-<footer><h2><b>Type in the blank Space to add activity .<br>And select the button to check it off </b></h2></footer>
+<footer><h2><b>Type in the blank Space to add activity .<br>And select the button to check it off </b></h2>
+<h3>Made by Pratik Singh</h3>
+<h4>
+  <a href="https://kitarp29.github.io/onlineCV/beckham/" style="padding:20px 20px 20px 20px">Website</a>
+  <a href="https://www.linkedin.com/in/pratik-singh-b11a67141/" style="padding:20px 20px 20px 20px">Linkedin</a>
+  <a href="https://github.com/kitarp29" style="padding:20px 20px 20px 20px">Github</a>
+
+
+</h4>
+</footer>
   </body>
 </html>

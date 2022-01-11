@@ -1,14 +1,17 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const path = require('path');
 
 const app=express();
 var ans=[];
 app.set('view engine','ejs');
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-
-mongoose.connect("mongodb+srv://Pratik:Pratik2902@cluster0-io8ki.mongodb.net/todolistDB?retryWrites=true&w=majority/todolistDB",{ useUnifiedTopology: true ,useNewUrlParser: true});
+app.set('views', path.join(__dirname, '/views')); 
+mongoose.connect(process.env.DB_URL,{ useUnifiedTopology: true ,useNewUrlParser: true});
 
 const item ={
   name:{
